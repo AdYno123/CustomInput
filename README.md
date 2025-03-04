@@ -1,26 +1,23 @@
-# Custom input for O2
+# Custom Input for O2
 
-Pracnosť: 45min
-Vypracoval: Andrej Orčík
-Technológie: React.JS + Typescript, SCSS, React-Hook-Form (iba na testing)
+**Pracnosť**: 45 min  
+**Vypracoval**: Andrej Orčík  
+**Technológie**: React.js + TypeScript, SCSS, React-Hook-Form (iba na testovanie)
 
+Vytvoril som **Custom Input** podľa zadania vo Figme.
 
-Vytvoril som Custom Input podľa zadanie vo figme.
+### **Varianty**:
+- `FontVariant`: `'small' | 'medium'`
+- `Spacing`: `'xs' | 's' | 'm' | 'l'`
 
-**Varianty:**
-type FontVariant = 'small' | 'medium'
+### **Pridané funkcie**:
+- `isOptional: boolean`
+- `isError: boolean`
 
-type Spacing = 'xs' | 's' | 'm' | 'l'
+Keďže v zadaní nebolo presne určené, ktoré technológie sa majú použiť, vybral som tie, ktoré sú najviac prístupné bez pridania ďalších balíčkov. Preto som zvolil **TypeScript** a **SCSS**.
 
-**Pridal som:**
-isOptional:boolean
+Ak by som mal úplne voľnú ruku, použil by som **React-Hook-Form**, **TailwindCSS**, **ShadcnUi** a podobné knižnice.
 
-isError:boolean
-
-Kedže v zadaní nebolo ktoré presne technológie používať tak som si vybral tak aby to bolo čo najviac pristupné bez akýchkoľvek dalších pridaných package, preto som zvolil typescript a scss.
-Ak by som mal úplne voľnú ruku použival by som React-Hook-Form,  TailwindCSS, ShadcnUi a pod..
-
-Snažil som sa urobiť input aby čo najviac odrážal, to že sa iba pomocou importu bude dať použivať kdekoľvek, pridal som ho do form aby sme vedeli aj odskúšať jednotlivé stavy :) 
+Snažil som sa vytvoriť input, ktorý bude čo najviac flexibilný a prístupný, aby sa dal jednoducho použiť kdekoľvek iba pomocou importu. Pridal som ho aj do formulára, aby sme vedeli otestovať rôzne stavy. :)
 
 Ďakujem.
-
