@@ -7,12 +7,14 @@ Technológie: React.JS + Typescript, SCSS, React-Hook-Form (iba na testing)
 
 Vytvoril som Custom Input podľa zadanie vo figme.
 
-Varianty:
+**Varianty:**
 type FontVariant = 'small' | 'medium'
+
 type Spacing = 'xs' | 's' | 'm' | 'l'
 
-Pridal som:
+**Pridal som:**
 isOptional:boolean
+
 isError:boolean
 
 Kedže v zadaní nebolo ktoré presne technológie používať tak som si vybral tak aby to bolo čo najviac pristupné bez akýchkoľvek dalších pridaných package, preto som zvolil typescript a scss.
