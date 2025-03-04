@@ -1,0 +1,134 @@
+// Surface colors
+$surface-x-high: #8c8c9a;
+$surface-x-low: #ffffff;
+$surface-brand: #0050ff;
+$surface-danger: #dc2828;
+$surface-danger-variant: #ffdcdc;
+$surface-warning: #a56315;
+$surface-warning-variant: #faf1b6;
+
+// Content colors
+$content-neutral-xx-high: #2c2c31;
+$content-neutral-medium: #8c8c9a;
+$content-neutral-low: #c9c9ce;
+$content-danger: #dc2828;
+$content-warning: #a56315;
+
+// State colors
+$state-hover: rgba(26, 26, 26, 0.06); // 6% opacity for ##1A1A1A
+$state-focus: rgba(26, 26, 26, 0.8); // 80% opacity for #1A1A1A
+
+// Border radius
+$border-radius: 12px;
+
+// Font variants
+$font-small: (
+	size: 14px,
+	weight: 400,
+	line-height: 18px,
+	letter-spacing: 0.5px
+);
+
+$font-medium: (
+	size: 16px,
+	weight: 500,
+	line-height: 22px,
+	letter-spacing: 0.7px
+);
+
+// Spacing options
+$spacing: (
+	xs: 8px,
+	s: 12px,
+	m: 16px,
+	l: 20px
+);
+
+@mixin font-style($variant) {
+	font-size: map-get($variant, size);
+	font-weight: map-get($variant, weight);
+	line-height: map-get($variant, line-height);
+	letter-spacing: map-get($variant, letter-spacing);
+}
+
+.input-container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 400px;
+}
+
+.input-label {
+	font-size: 22px;
+	font-family: sans-serif;
+	color: $content-neutral-xx-high;
+	transition: color 0.3s ease;
+	margin-bottom: 5px;
+
+	&--small {
+		@include font-style($font-small);
+	}
+
+	&--medium {
+		@include font-style($font-medium);
+	}
+
+	&--error {
+		color: $surface-danger;
+	}
+
+	&:hover {
+		color: $content-neutral-medium;
+	}
+
+	&:focus-within {
+		color: $surface-brand;
+	}
+
+	.input-label-optional {
+		color: $content-neutral-medium;
+		margin-left: 10px;
+	}
+}
+
+.input {
+	font-family: sans-serif;
+	width: 100%;
+	padding: map-get($spacing, m);
+	border: 1px solid $surface-x-high;
+	border-radius: $border-radius;
+	background: $surface-x-low;
+	color: $content-neutral-low;
+	outline: none;
+	transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+
+	&--small {
+		@include font-style($font-small);
+	}
+
+	&--medium {
+		@include font-style($font-medium);
+	}
+
+	@each $key, $value in $spacing {
+		&--spacing-#{$key} {
+			padding: $value;
+		}
+	}
+
+	&--error {
+		border-color: $surface-danger;
+		color: $surface-danger;
+	}
+
+	&:hover {
+		border-color: $state-hover;
+	}
+
+	&:focus {
+		color: $content-neutral-medium;
+		caret-color: $surface-brand;
+		border: 3px solid $state-focus;
+		outline: none;
+	}
+}
